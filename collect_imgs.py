@@ -1,12 +1,14 @@
 import os
+
 import cv2
+
 
 DATA_DIR = './data'
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
-number_of_classes = 14
-dataset_size = 100
+number_of_classes = 26
+dataset_size = 500
 
 cap = cv2.VideoCapture(0)
 for j in range(number_of_classes):
@@ -18,7 +20,7 @@ for j in range(number_of_classes):
     done = False
     while True:
         ret, frame = cap.read()
-        cv2.putText(frame, 'Press "S" to start capture', (200, 50), cv2.FONT_HERSHEY_TRIPLEX , 0.5, (255, 255, 255), 0,
+        cv2.putText(frame, 'Press "s" to capture images', (100, 50), cv2.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 0), 2,
                     cv2.LINE_AA)
         cv2.imshow('frame', frame)
         if cv2.waitKey(25) == ord('s'):

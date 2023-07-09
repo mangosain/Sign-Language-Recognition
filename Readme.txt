@@ -1,1 +1,2 @@
-create_imgs -> create_dataset -> train_classifier -> inference_classifier
+create_imgs -> create_dataset -> train_classifier -> Final
+
